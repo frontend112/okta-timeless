@@ -2,31 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql, StaticQuery } from 'gatsby'
 import '../styles/index.css'
-import Layout from '../components/Layout'
-import Post from '../components/Post'
+import NewPosts from '../components/NewPosts'
 export function DressCodeHistorycznie({data}){
   const posts = data.allMarkdownRemark.edges
-  let newPosts = posts.map(({node:post})=>{
-    if(checkPath(`${post.frontmatter.path}`))
-    return post
-    else return ''
-  })
-  newPosts = newPosts.filter(function(v){return v!==''});
-  return(
-    <Layout>
-    <div className='blog-list__content-wrapper'>
-      {
-        newPosts.map((post,id)=>(
-          <Post post={post} id={id}/>
-        ))
-      }
-    </div>
-  </Layout>
-  )
-}
-function checkPath(pathToCheck){
-  const properPath = new RegExp('/blog/dress-code/historycznie/.*')
-  return properPath.test(pathToCheck)
+  return <NewPosts posts={posts}/>
 }
 DressCodeHistorycznie.propTypes = {
   data: PropTypes.shape({
