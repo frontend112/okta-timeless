@@ -8,24 +8,29 @@ import '../styles/index.css'
 function BlogRoll({data}){
   const posts = data.allMarkdownRemark.edges
   return(
-  <Layout>
-    <div className='blog-list__content-wrapper'>
-      {
-      posts.map(({node:post})=>(
-        <div key={post.id} className='blog-list__wrapper'>
-            <GatsbyImage className='blog-list blog-list--picture' image={
-              getImage(post.frontmatter.mainImage?post.frontmatter.mainImage:'')} alt='mainimage'
-              />
-            <div className='blog-list blog-list--description'>
-              <p className='blog-list blog-list--date'>{post.frontmatter.date}</p>
-              <p className='blog-list blog-list--title'>{post.frontmatter.title}</p>
-              <p className='blog-list blog-list--link'><Link to={post.frontmatter.path}>kliknij tu !</Link></p>
+    <Layout>
+      <div className='blog-list__content-wrapper'>
+        {
+          posts.map(({node:post})=>(
+            <div key={post.id} className='blog-list__wrapper'>
+              <GatsbyImage className='blog-list blog-list--picture' image={
+                getImage(post.frontmatter.mainImage?
+                  post.frontmatter.mainImage:
+                  ''
+                )
+              } alt='mainimage'/>
+              <div className='blog-list blog-list--description'>
+                <p className='blog-list blog-list--date'>{post.frontmatter.date}</p>
+                <p className='blog-list blog-list--title'>{post.frontmatter.title}</p>
+                <p className='blog-list blog-list--link'>
+                  <Link to={post.frontmatter.path}>kliknij tu !</Link>
+                </p>
+              </div>
             </div>
-        </div>
-      ))
-      }
-    </div>
-  </Layout>)
+          ))
+        }
+      </div>
+    </Layout>)
 }
 BlogRoll.propTypes = {
   data: PropTypes.shape({

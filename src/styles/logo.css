@@ -1,9 +1,9 @@
 .logo__link{
     display: block;
-    text-align: center;
     width: 600px;
     margin: 5vh auto 5vh;
     max-width:100%;
+    text-align: center;
 }
 .logo__image{
     width: 100%;

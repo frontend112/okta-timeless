@@ -19,7 +19,10 @@ function Menu() {
                 <Link to='/kobieta'>Kobieta</Link>
             </li>
             <li className='mobile-menu'>
-                <img onClick={()=>setIsClicked(handleClick(isClicked))} className='mobile-menu__image' src={button} alt='button'/>
+                <img onClick={
+                    ()=>setIsClicked(handleClick(isClicked))} 
+                    className='mobile-menu__image' src={button} alt='button'
+                />
             </li>
         </ul>
             <MobileMenu shouldShow={isClicked?true:false}/>

@@ -5,7 +5,9 @@ import '../styles/index.css'
 const Logo = () =>{
     return(
     <div className='logo__wrapper'>
-        <Link className='logo__link' to='/'><img className='logo__image'src={logo} alt ='logo'/></Link>
+        <Link className='logo__link' to='/'>
+            <img className='logo__image'src={logo} alt ='logo'/>
+        </Link>
     </div>)
 }
 export default Logo

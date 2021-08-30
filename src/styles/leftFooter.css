@@ -1,13 +1,13 @@
 .left-footer{
+    display: block;
+    position:sticky;
+    position:-webkit-sticky;
+    float:left;
     width: 20%;
     line-height: 2rem;
     margin-top: 10vh;
     border-right: 1px solid #999;
     padding-right: 2vw;
-    display: block;
-    float:left;
-    position:-webkit-sticky;
-    position:sticky;
     top:10px;
     left:1%;
 }

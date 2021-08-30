@@ -39,6 +39,7 @@
     border-top: 1px solid #54595F;
     background-color: #f1f1eb;
 }
+/* when user move mouse over menu should show 4 categories, they are hidden default */
 .menu__item:hover .menu__dress-code--hidden{
     visibility: visible;
 }
@@ -71,11 +72,13 @@
         text-align: center;
         background-color: #f1f1ebd7;
     }
-    /* handle click button */
+    /* handle click button - this class is set default and will be set when he click 
+    2nd time into the button */
     .mobile-menu__main-links--hidden{
         display: none;
     }
 }
+/* hide button for width more than 900px */
 @media only screen and (min-width: 901px){
     .mobile-menu__main-links{
         display: none;
