@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
 function MobileMenu({shouldShow}) {
-    console.log(shouldShow)
     return (
         <div className='mobile-menu__wrapper'>
         <ul className=
