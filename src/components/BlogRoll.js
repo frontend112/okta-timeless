@@ -11,7 +11,6 @@ function BlogRoll({data}){
   const shouldShow = (index)=>{
     if(index < 4 + 4*whichPage && 
       index > 4*whichPage-1){
-      localStorage.clear()
       return true
     }
 }
