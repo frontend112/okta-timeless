@@ -4,28 +4,45 @@ import { Link, graphql, StaticQuery } from 'gatsby'
 import '../styles/index.css'
 import Layout from './Layout.js'
 import { getImage, GatsbyImage } from 'gatsby-plugin-image'
-import '../styles/index.css'
+
 function BlogRoll({data}){
   const posts = data.allMarkdownRemark.edges
+  const whichPage = 0;
+  const shouldShow = (index)=>{
+    if(index < 4 + 4*whichPage && 
+      index > 4*whichPage-1){
+      return true
+    }
+}
   return(
-  <Layout>
-    <div className='blog-list__content-wrapper'>
-      {
-      posts.map(({node:post})=>(
-        <div key={post.id} className='blog-list__wrapper'>
-            <GatsbyImage className='blog-list blog-list--picture' image={
-              getImage(post.frontmatter.mainImage?post.frontmatter.mainImage:'')} alt='mainimage'
-              />
-            <div className='blog-list blog-list--description'>
-              <p className='blog-list blog-list--date'>{post.frontmatter.date}</p>
-              <p className='blog-list blog-list--title'>{post.frontmatter.title}</p>
-              <p className='blog-list blog-list--link'><Link to={post.frontmatter.path}>kliknij tu !</Link></p>
-            </div>
-        </div>
-      ))
-      }
-    </div>
-  </Layout>)
+    <Layout>
+      <div className='blog-list__content-wrapper'>
+        {
+          posts.map(({node:post},index)=>(
+            post.frontmatter.mainImage&&shouldShow(index)?(
+              <div key={post.id} className='blog-list__wrapper'>
+                <GatsbyImage className='blog-list blog-list--picture' image={
+                  getImage(post.frontmatter.mainImage)
+                } alt='mainimage'/>
+                <div className='blog-list blog-list--description'>
+                  <p className='blog-list blog-list--date'>
+                    {post.frontmatter.date}
+                  </p>
+                  <p className='blog-list blog-list--title'>
+                    {post.frontmatter.title}
+                  </p>
+                  <p className='blog-list blog-list--link'>
+                    <Link to={post.frontmatter.path}>
+                      kliknij tu!
+                    </Link>
+                  </p>
+                </div>
+              </div>
+            ):''
+          ))
+        }
+      </div>
+    </Layout>)
 }
 BlogRoll.propTypes = {
   data: PropTypes.shape({
@@ -44,7 +61,6 @@ const query = () => (
         ) {
           edges {
             node {
-              excerpt(pruneLength: 400)
               id
               frontmatter {
                 path

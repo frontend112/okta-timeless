@@ -1,20 +1,20 @@
+.blog-post__container{
+    display:  inline-block;
+    width: 80%;
+    margin-bottom: 1vh;
+}
 .blog-list__content-wrapper{
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-end;
     margin: 10vh 5vw;
     width: auto;
-    align-items: flex-end;
 }
 .blog-list__wrapper{
     flex-basis: 50%;
     display: flex;
     align-items:flex-end;
     padding-bottom:5px;
-}
-.blog-post__container{
-    display:  inline-block;
-    width: 80%;
-    margin-bottom: 1vh;
 }
 .blog-list{
     padding:0 1px 0 1rem;

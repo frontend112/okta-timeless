@@ -31,3 +31,8 @@ img{
 .gatsby-resp-image-background-image{
     background-image: none;
 }
+.blog-list__other-posts{
+    margin-top: 10vh;   
+    display: block;
+    width: 100%;
+}

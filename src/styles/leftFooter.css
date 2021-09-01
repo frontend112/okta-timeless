@@ -1,18 +1,30 @@
 .left-footer{
+    display: block;
+    position:sticky;
+    position:-webkit-sticky;
+    float:left;
     width: 20%;
     line-height: 2rem;
     margin-top: 10vh;
     border-right: 1px solid #999;
     padding-right: 2vw;
-    display: block;
-    float:left;
-    position:-webkit-sticky;
-    position:sticky;
     top:10px;
     left:1%;
 }
 .left-footer__picture{
     max-width:100%;
+}
+.left-footer__social-icons{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+.left-footer__link{
+    flex-basis: 55px;
+    padding-right: 10px;
+}
+.left-footer__social-icon{
+    width: 100%;
 }
 /* on mobile hide this left footer and move to the bottom */
 @media only screen and (max-width: 900px){
