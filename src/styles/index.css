@@ -32,7 +32,7 @@ img{
     background-image: none;
 }
 .blog-list__other-posts{
-    width:100%;
-    text-align: center;
     margin-top: 10vh;   
+    display: block;
+    width: 100%;
 }
