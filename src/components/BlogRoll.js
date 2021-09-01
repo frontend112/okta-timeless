@@ -4,13 +4,13 @@ import { Link, graphql, StaticQuery } from 'gatsby'
 import '../styles/index.css'
 import Layout from './Layout.js'
 import { getImage, GatsbyImage } from 'gatsby-plugin-image'
-import WhichPost from './WhichPost'
 
 function BlogRoll({data}){
   const posts = data.allMarkdownRemark.edges
-  console.log(posts)
+  const whichPage = 0;
   const shouldShow = (index)=>{
-    if(index < 4 + 4*localStorage.getItem('whichPage') && index > 4*localStorage.getItem('whichPage')-1){
+    if(index < 4 + 4*whichPage && 
+      index > 4*whichPage-1){
       localStorage.clear()
       return true
     }
@@ -42,7 +42,6 @@ function BlogRoll({data}){
             ):''
           ))
         }
-        {/* <WhichPost posts={posts}/> */}
       </div>
     </Layout>)
 }
