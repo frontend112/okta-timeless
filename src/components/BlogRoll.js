@@ -42,7 +42,7 @@ function BlogRoll({data}){
             ):''
           ))
         }
-        <WhichPost posts={posts}/>
+        {/* <WhichPost posts={posts}/> */}
       </div>
     </Layout>)
 }
