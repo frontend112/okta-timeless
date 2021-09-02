@@ -7,19 +7,12 @@ import { getImage, GatsbyImage } from 'gatsby-plugin-image'
 
 function BlogRoll({data}){
   const posts = data.allMarkdownRemark.edges
-  const whichPage = 0;
-  const shouldShow = (index)=>{
-    if(index < 4 + 4*whichPage && 
-      index > 4*whichPage-1){
-      return true
-    }
-}
   return(
     <Layout>
       <div className='blog-list__content-wrapper'>
         {
           posts.map(({node:post},index)=>(
-            post.frontmatter.mainImage&&shouldShow(index)?(
+            post.frontmatter.mainImage?(
               <div key={post.id} className='blog-list__wrapper'>
                 <GatsbyImage className='blog-list blog-list--picture' image={
                   getImage(post.frontmatter.mainImage)
