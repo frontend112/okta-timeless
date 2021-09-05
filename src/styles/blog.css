@@ -9,6 +9,7 @@
     align-items: flex-end;
     margin: 10vh 5vw;
     width: auto;
+    justify-content: space-around;
 }
 .blog-list__wrapper{
     flex-basis: 50%;
