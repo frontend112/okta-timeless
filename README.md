@@ -6,6 +6,7 @@ To see this project on Your computer <br/>
   <li>type npm install </li>
   <li>type npm start</li>
   <li>go to the browser and type localhost:8000/</li>
+  <li>you can also go to localhost:8000/admin to see admin site</li>
 </ol>
 To create this site I used these sites:
 https://developer.okta.com/blog/2020/02/18/gatsby-react-netlify - how to connect github with netlifycms and finally with <a href='https://612f51f3b6119a00087ce62c--distracted-jackson-d953cb.netlify.app/'><b>this site</b></a><br/>
