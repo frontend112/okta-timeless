@@ -15,4 +15,4 @@ https://www.gatsbyjs.com/docs/tutorial/ - how to write sites in gatsby<br/>
 https://freeicons.io/ - social icons<br/>
 https://www.youtube.com/watch?v=qvawKezSR8I&list=LL&index=2&t=572s - import pictures<br/>
 <br/>
-final version will be updated also there: <a href='https://timelessworld.pl/'><b>timelessworld.pl</b></a><br/>
+final version will be probably here: <a href='https://distracted-jackson-d953cb.netlify.app/'><b>https://distracted-jackson-d953cb.netlify.app/</b></a><br/>
