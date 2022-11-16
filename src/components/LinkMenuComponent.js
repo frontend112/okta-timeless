@@ -12,7 +12,7 @@ export default function LinkMenuComponent(props) {
 
                 {
                     subLinks.map(sublink => (
-                        <li className={`menu__${props.linkName}__item`}>
+                        <li key={sublink} className={`menu__${props.linkName}__item`}>
                             <Link to={`/${props.linkName}__${sublink}`}>
                                 { sublink }
                             </Link>
