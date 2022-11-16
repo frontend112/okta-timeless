@@ -19,7 +19,6 @@ https://www.gatsbyjs.com/docs/tutorial/ - how to write sites in gatsby<br/>
 https://freeicons.io/ - social icons<br/>
 https://www.youtube.com/watch?v=qvawKezSR8I&list=LL&index=2&t=572s - import pictures<br/>
 <br/>
-
 This page was created one year ago for my friend but she finally decide not to use it,<br/>
 and with wordpress create something on her own<br/>
 (she is journalist and she wanted blog)<br/>
