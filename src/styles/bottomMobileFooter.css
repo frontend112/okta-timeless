@@ -1,10 +1,23 @@
 .bottom-footer{
     display:none;
     margin: 5vh 2vw;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.bottom-footer .left-footer__social-icons{
+    margin: 50px 0;
+    max-width: 300px;
+
+}
+.bottom-footer .left-footer__link{
+    flex-basis: 40px;
+    margin-right:5%;
+}
+.bottom-footer__description {
+    max-width: 300px;
 }
 @media only screen and (max-width: 900px){
     .bottom-footer{
         display:block;
-        border-top: 1px solid #000;
+        border-top: 2px solid #000;
     }
 }

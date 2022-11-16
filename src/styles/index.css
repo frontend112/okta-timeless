@@ -1,9 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Charmonman&display=swap');
+@font-face{
+    font-family: "CrimsonSemibold";
+    src: local("CrimsonSemibold"),
+    url('../fonts/crimson/OTF/Crimson-Semibold.otf') format("truetype");
+    font-weight:bold;
+}
 @import 'logo.css';
 @import 'menu.css';
 @import 'blog.css';
 @import 'leftFooter.css';
 @import 'bottomMobileFooter.css';
+@import 'copyright.css';
+body{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
 :root {
     --grey: #54595F;
 }
@@ -14,13 +24,13 @@
     text-decoration: none;
     list-style-type: none;
     color: var(--grey);
-    font-family: 'Charmonman', cursive;
+    text-align: justify;
 }
 .contact{
     padding-right:50px;
     text-align:right;
     font-size: 2rem;
-    border-bottom: 1px solid #54595F;
+    border-bottom: 1px solid #999999;
 }
 /* fix problem with menu: */
 img{

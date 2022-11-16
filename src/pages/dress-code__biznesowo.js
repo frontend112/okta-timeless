@@ -1,26 +1,27 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql, StaticQuery } from 'gatsby'
-import '../styles/index.css'
-import NewPosts from '../components/NewPosts'
-export function DressCodeBiznesowo({data}){
+import React from "react"
+import PropTypes from "prop-types"
+import { graphql, StaticQuery } from "gatsby"
+import "../styles/index.css"
+import NewPosts from "../components/NewPosts"
+
+function DressCodeBiznesowo({ data }) {
   const posts = data.allMarkdownRemark.edges
-  return <NewPosts posts={posts}/>
+  return <NewPosts posts={posts} correctPath="dress-code/biznesowo" />
 }
+
 DressCodeBiznesowo.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.array,
     }),
   }),
-};
+}
+
 const query = () => (
   <StaticQuery
     query={graphql`
       query DressCodeBiznesowo {
-        allMarkdownRemark(
-          sort: { order: DESC, fields: [frontmatter___date] }
-        ) {
+        allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
           edges {
             node {
               excerpt(pruneLength: 400)
@@ -33,9 +34,9 @@ const query = () => (
                   childImageSharp {
                     gatsbyImageData(
                       width: 200
-                      blurredOptions: {width: 100}
+                      blurredOptions: { width: 100 }
                       placeholder: BLURRED
-                      transformOptions: {cropFocus: CENTER}
+                      transformOptions: { cropFocus: CENTER }
                       aspectRatio: 0.7
                     )
                   }
@@ -46,7 +47,7 @@ const query = () => (
         }
       }
     `}
-    render={(data) => <DressCodeBiznesowo data={data}/>}
+    render={data => <DressCodeBiznesowo data={data} />}
   />
 )
 
