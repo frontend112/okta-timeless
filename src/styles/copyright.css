@@ -1,0 +1,17 @@
+.copyright{
+    text-align: center;
+    padding-bottom: 20px;
+}
+.copyright__sztukaKobiecosci{
+    color:#F5EDBC;
+    padding-right: 10px;
+}
+.copyright__kontakt{
+    color: #F5EDBC;
+}
+@media only screen and (max-width: 900px){
+    .copyright{
+        text-align: left;
+        margin: 0 2vw;
+    }
+}
