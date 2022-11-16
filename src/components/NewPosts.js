@@ -3,7 +3,6 @@ import Layout from "./Layout"
 import Post from "./Post"
 
 function NewPosts({ posts, correctPath }) {
-  console.log(`${correctPath}`)
   let newPosts = posts.map(({ node: post }) => {
     if (checkPath(`${post.frontmatter.path}`, correctPath)) return post
     else return ""
@@ -22,7 +21,6 @@ function NewPosts({ posts, correctPath }) {
   )
 }
 function checkPath(pathToCheck, correctPath) {
-  console.log(pathToCheck + " and " + correctPath)
   const properPath = new RegExp(`/blog/${correctPath}/.*`)
   return properPath.test(pathToCheck)
 }

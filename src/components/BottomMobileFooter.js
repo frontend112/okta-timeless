@@ -5,6 +5,7 @@ import facebook from "../../static/assets/facebook.png"
 import instagram from "../../static/assets/instagram.png"
 import printerest from "../../static/assets/printerest.png"
 import heart from "../../static/assets/heart.png"
+
 function BottomMobileFooter() {
   return (
     <div className="bottom-footer">
