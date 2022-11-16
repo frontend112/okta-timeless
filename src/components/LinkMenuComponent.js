@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'gatsby'
 
-export default function LinkMenuComponent(props) {
+function LinkMenuComponent(props) {
     const subLinks = ['historycznie', 'obyczajowo', 'biznesowo', 'miedzynarodowo'];
 
     return (
@@ -24,3 +24,5 @@ export default function LinkMenuComponent(props) {
         
     )
 }
+
+export default LinkMenuComponent;

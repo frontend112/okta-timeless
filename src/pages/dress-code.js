@@ -3,10 +3,12 @@ import PropTypes from "prop-types"
 import { graphql, StaticQuery } from "gatsby"
 import "../styles/index.css"
 import NewPosts from "../components/NewPosts"
-export function DressCode({ data }) {
+
+function DressCode({ data }) {
   const posts = data.allMarkdownRemark.edges
   return <NewPosts posts={posts} correctPath="dress-code" />
 }
+
 DressCode.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
@@ -14,6 +16,7 @@ DressCode.propTypes = {
     }),
   }),
 }
+
 const query = () => (
   <StaticQuery
     query={graphql`

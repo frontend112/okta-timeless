@@ -5,6 +5,7 @@ import LeftFooter from "./LeftFooter"
 import Menu from "./Menu"
 import BottomMobileFooter from "./BottomMobileFooter"
 import Copyright from "./Copyright"
+
 const Layout = props => {
   return (
     <>
