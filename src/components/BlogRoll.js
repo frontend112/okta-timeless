@@ -11,7 +11,7 @@ function BlogRoll({ data }) {
   return (
     <Layout>
       <div className="blog-list__content-wrapper">
-        {posts.map(({ node: post }, index) =>
+        {posts.map(({ node: post }) =>
           post.frontmatter.mainImage ? (
             <div key={post.id} className="blog-list__wrapper">
               <GatsbyImage
