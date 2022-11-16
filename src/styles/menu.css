@@ -1,43 +1,51 @@
 .menu__items{
-    padding: 15px 0 0;
+    padding: 10px 0 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    height: 80px;
+    height: 60px;
     overflow-y: unset;
     background-color: #f1f1ebd7;
 }
 .menu__item{
-    font-size: 1.5rem;
-    padding: 0 4%;
+    font-size: 1.3rem;
+    padding: 0 2%;
     z-index: 100;
+    text-align: center;
 }
-.menu__item:hover{
-    filter: blur(0.7px);
+.menu__item a:hover{
+    color:rgb(121, 121, 121);
 }
 .menu__savoir-vivre{
-    padding-top: 25px;
+    padding-top: 14px;
 }
 .menu__savoir-vivre--hidden{
     visibility: hidden;
-    margin-top: -5px;
+    font-size: 1rem;
 }
 .menu__savoir-vivre__item{
-    padding: 10px 0;
-    border-top: 1px solid #54595F;
+    padding: 10px;
     background-color: #f1f1eb;
+    text-align: center;
 }
 .menu__dress-code{
-    padding-top: 25px;
+    padding-top: 14px;
 }
 .menu__dress-code--hidden{
     visibility: hidden;
-    margin-top: -5px;
+    font-size: 1rem;
 }
 .menu__dress-code__item{
-    padding: 10px 0;
-    border-top: 1px solid #54595F;
+    padding: 10px;
     background-color: #f1f1eb;
+    text-align: center;
+}
+@keyframes myMenu {
+    from {opacity: 0.5};
+    to {opacity: 1};
+}
+.menu__item:hover{
+    animation: myMenu 4s;
 }
 /* when user move mouse over menu should show 4 categories, they are hidden default */
 .menu__item:hover .menu__dress-code--hidden{
@@ -51,36 +59,55 @@
 }
 /* mobile menu */
 @media only screen and (max-width: 900px){
-    .mobile-menu__wrapper{
-        display:flex;
-        width: 100%;
-    }
-    .mobile-menu__main-links{
-        width: 50%;
-    }
-    .menu__item{
+    .menu__items{
         display: none;
     }
-    .mobile-menu,.mobile-menu__main-links,.mobile-menu__item{
-        display: block;
+    *{
+        margin:0;
+        padding:0;
     }
-    .mobile-menu__image{
-        height: 80%;
-        cursor:pointer;
+    body{
+        font-family: Source Sans Pro;
     }
-    .mobile-menu__item{
-        text-align: center;
-        background-color: #f1f1ebd7;
+    #sidebar{
+        position:absolute;
+        width:300px;
+        height:100%;
+        background: #333;
+        left: -300px;
+        transition:2s;
     }
-    /* handle click button - this class is set default and will be set when he click 
-    2nd time into the button */
-    .mobile-menu__main-links--hidden{
-        display: none;
+    #sidebar.active{
+        left:0;
+    }
+        
+    #sidebar ul li {
+        list-style: none;
+        color:#fff;
+        font-size: 20px;
+        padding: 20px 24px;
+    }
+    #sidebar .toggle-btn{
+        position: absolute;
+        top:30px;
+        left:330px;
+        cursor: pointer;
+    }
+    .toggle-btn span{
+        width:45px;
+        height:4px;
+        background:#333;
+        display:block;
+        margin-top:4px;
+    }
+    .mobile__link a{color:#fff}
+    .blog-post__container{
+        margin-top:100px;
     }
 }
 /* hide button for width more than 900px */
 @media only screen and (min-width: 901px){
-    .mobile-menu__main-links{
+    .mobile-menu__wrapper{
         display: none;
     }
 }

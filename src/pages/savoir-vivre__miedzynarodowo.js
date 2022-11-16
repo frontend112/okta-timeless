@@ -1,11 +1,11 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql, StaticQuery } from 'gatsby'
-import '../styles/index.css'
-import NewPosts from '../components/NewPosts'
-export function SavoirVivreMiedzynarodowo({data}){
+import React from "react"
+import PropTypes from "prop-types"
+import { graphql, StaticQuery } from "gatsby"
+import "../styles/index.css"
+import NewPosts from "../components/NewPosts"
+export function SavoirVivreMiedzynarodowo({ data }) {
   const posts = data.allMarkdownRemark.edges
-  return <NewPosts posts={posts}/>
+  return <NewPosts posts={posts} correctPath="savoir-vivre/miedzynarodowo" />
 }
 SavoirVivreMiedzynarodowo.propTypes = {
   data: PropTypes.shape({
@@ -13,14 +13,12 @@ SavoirVivreMiedzynarodowo.propTypes = {
       edges: PropTypes.array,
     }),
   }),
-};
+}
 const query = () => (
   <StaticQuery
     query={graphql`
       query SavoirVivreMiedzynarodowo {
-        allMarkdownRemark(
-          sort: { order: DESC, fields: [frontmatter___date] }
-        ) {
+        allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
           edges {
             node {
               excerpt(pruneLength: 400)
@@ -33,9 +31,9 @@ const query = () => (
                   childImageSharp {
                     gatsbyImageData(
                       width: 200
-                      blurredOptions: {width: 100}
+                      blurredOptions: { width: 100 }
                       placeholder: BLURRED
-                      transformOptions: {cropFocus: CENTER}
+                      transformOptions: { cropFocus: CENTER }
                       aspectRatio: 0.7
                     )
                   }
@@ -46,7 +44,7 @@ const query = () => (
         }
       }
     `}
-    render={(data) => <SavoirVivreMiedzynarodowo data={data}/>}
+    render={data => <SavoirVivreMiedzynarodowo data={data} />}
   />
 )
 

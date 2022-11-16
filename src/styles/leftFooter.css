@@ -10,18 +10,25 @@
     padding-right: 2vw;
     top:10px;
     left:1%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.left-footer__header{
+    margin-top: 50px;
 }
 .left-footer__picture{
     max-width:100%;
+}
+.left-footer__description{
+    line-height: 1.2rem;
 }
 .left-footer__social-icons{
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
 }
-.left-footer__link{
-    flex-basis: 55px;
-    padding-right: 10px;
+.left-footer .left-footer__link{
+    flex-basis: 20%;
+    margin: 0 5%;
 }
 .left-footer__social-icon{
     width: 100%;
@@ -31,7 +38,5 @@
     .left-footer{
         display: none;
     }
-    .blog-list__content-wrapper{
-        width: 100%;
-    }
 }
+

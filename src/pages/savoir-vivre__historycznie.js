@@ -1,11 +1,11 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql, StaticQuery } from 'gatsby'
-import '../styles/index.css'
-import NewPosts from '../components/NewPosts'
-export function SavoirVivreNigdyHistorycznie({data}){
+import React from "react"
+import PropTypes from "prop-types"
+import { graphql, StaticQuery } from "gatsby"
+import "../styles/index.css"
+import NewPosts from "../components/NewPosts"
+export function SavoirVivreNigdyHistorycznie({ data }) {
   const posts = data.allMarkdownRemark.edges
-  return <NewPosts posts={posts}/>
+  return <NewPosts posts={posts} correctPath="savoir-vivre/historycznie" />
 }
 SavoirVivreNigdyHistorycznie.propTypes = {
   data: PropTypes.shape({
@@ -13,14 +13,12 @@ SavoirVivreNigdyHistorycznie.propTypes = {
       edges: PropTypes.array,
     }),
   }),
-};
+}
 const query = () => (
   <StaticQuery
     query={graphql`
       query SavoirVivreNigdyHistorycznie {
-        allMarkdownRemark(
-          sort: { order: DESC, fields: [frontmatter___date] }
-        ) {
+        allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
           edges {
             node {
               excerpt(pruneLength: 400)
@@ -33,9 +31,9 @@ const query = () => (
                   childImageSharp {
                     gatsbyImageData(
                       width: 200
-                      blurredOptions: {width: 100}
+                      blurredOptions: { width: 100 }
                       placeholder: BLURRED
-                      transformOptions: {cropFocus: CENTER}
+                      transformOptions: { cropFocus: CENTER }
                       aspectRatio: 0.7
                     )
                   }
@@ -46,7 +44,7 @@ const query = () => (
         }
       }
     `}
-    render={(data) => <SavoirVivreNigdyHistorycznie data={data}/>}
+    render={data => <SavoirVivreNigdyHistorycznie data={data} />}
   />
 )
 

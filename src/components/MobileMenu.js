@@ -1,55 +1,30 @@
-import React from 'react'
-import { Link } from 'gatsby'
-function MobileMenu({shouldShow}) {
-    return (
-        <div className='mobile-menu__wrapper'>
-        <ul className=
-            {
-                shouldShow?
-                    'mobile-menu__main-links':
-                    'mobile-menu__main-links--hidden'
-            }
-        >
-            <li className='mobile-menu__item'>
-                <Link to='/savoir-vivre'>savoir-vivre</Link>
-            </li>
-            <li className='mobile-menu__item'>
-                <Link to='/savoir-vivre__historycznie'>historycznie</Link>
-            </li>
-            <li className='mobile-menu__item'>
-                <Link to='/savoir-vivre__obyczajowo'>obyczajawo</Link>
-            </li>
-            <li className='mobile-menu__item'>
-                <Link to='/savoir-vivre__biznesowo'>biznesowo</Link>
-            </li>
-            <li className='mobile-menu__item'>
-                <Link to='/savoir-vivre__miedzynarodowo'>międzynarodowo</Link>
-            </li>
-            </ul>
-        <ul className={
-            shouldShow?
-                'mobile-menu__main-links':
-                'mobile-menu__main-links--hidden'
-            }
-        >
-            <li className='mobile-menu__item'>
-                <Link to='/dress-code'>dress-code</Link>
-            </li>
-            <li className='mobile-menu__item'>
-                <Link to='/dress-code__historycznie'>historycznie</Link>
-            </li>
-            <li className='mobile-menu__item'>
-                <Link to='/dress-code__obyczajowo'>obyczajawo</Link>
-            </li>
-            <li className='mobile-menu__item'>
-                <Link to='/dress-code__biznesowo'>biznesowo</Link>
-            </li>
-            <li className='mobile-menu__item'>
-                <Link to='/dress-code__miedzynarodowo'>międzynarodowo</Link>
-            </li>
-        </ul>
-        </div>
-    )
-}
+import React, { useEffect } from "react"
+import { Link } from "gatsby"
+function MobileMenu() {
+  useEffect(() => {
+    document.querySelector(".toggle-btn").addEventListener("click", () => {
+      document.getElementById("sidebar").classList.toggle("active")
+    })
+  }, [])
 
+  return (
+    <div className="mobile-menu__wrapper">
+      <div id="sidebar">
+        <div className="toggle-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul>
+          <li className="mobile__link">
+            <Link to="/savoir-vivre">Savoir Vivre</Link>
+          </li>
+          <li className="mobile__link">
+            <Link to="/dress-code">Dress Code</Link>
+          </li>
+        </ul>
+      </div>
+    </div>
+  )
+}
 export default MobileMenu
